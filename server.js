@@ -9,11 +9,12 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
-    origin: "https://crypto-tracker-client-delta.vercel.app/",
-    methods: ["GET", "POST"],
-    credentials: true
-}));
+// app.use(cors({
+//     origin: "https://crypto-tracker-client-delta.vercel.app/",
+//     methods: ["GET", "POST"],
+//     credentials: true
+// }));
+app.use(cors());
 
 connectDB();
 
