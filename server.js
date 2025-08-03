@@ -9,9 +9,14 @@ dotenv.config();
 
 const app = express();
 
+app.use(cors({
+    origin: "https://crypto-tracker-client-delta.vercel.app/",
+    methods: ["GET", "POST"],
+    credentials: true
+}));
+
 connectDB();
 
-app.use(cors());
 app.use(express.json());
 
 app.use("/api", coinRoutes);
